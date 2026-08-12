@@ -16,21 +16,18 @@ int bubbleSort(int arr[], int n) {
 
 int main() {
     int n, i;
-    printf("Enter the number of elements: ");
-    if (scanf("%d", &n) != 1 || n <= 0) {
-        return 1;
-    }
-    int arr[n];
-    printf("Enter %d elements:\n", n);
+    printf("Enter size of the array: ");
+    scanf("%d", &n);
+
+    int ans[n];
+    printf("Enter elements of the array: ");
     for (i = 0; i < n; i++) {
-        if (scanf("%d", &arr[i]) != 1) {
-            return 1;
-        }
+        scanf("%d", &ans[i]);
     }
-    bubbleSort(arr, n);
+    bubbleSort(ans, n);
     printf("Sorted array: ");
     for (i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
+        printf("%d ", ans[i]);
     }
     printf("\n");
     return 0;
