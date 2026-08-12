@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void selectionSort(int arr[], int size) {
+int selectionSort(int arr[], int size) {
     for (int i = 0; i < size - 1; i++) {
         int min_index = i;
 
@@ -15,32 +15,23 @@ void selectionSort(int arr[], int size) {
             arr[min_index] = temp;
         }
     }
+    return 0;
 }
 
 int main() {
-    int size;
-    printf("Enter the number of elements: ");
-    if (scanf("%d", &size) != 1 || size <= 0) {
-        printf("Invalid size.\n");
-        return 1;
-    }
+    int n, i;
+    printf("Enter size of the array: ");
+    scanf("%d", &n);
 
-    int arr[size];
-    printf("Enter %d elements:\n", size);
-    for (int i = 0; i < size; i++) {
-        scanf("%d", &arr[i]);
+    int ans[n];
+    printf("Enter elements of the array: ");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &ans[i]);
     }
-
-    printf("\nUnsorted array: ");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-
-    selectionSort(arr, size);
+    selectionSort(ans, n);
     printf("Sorted array: ");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
+    for (i = 0; i < n; i++) {
+        printf("%d ", ans[i]);
     }
     printf("\n");
     return 0;
