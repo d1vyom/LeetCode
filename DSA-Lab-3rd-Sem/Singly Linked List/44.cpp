@@ -13,9 +13,9 @@ public:
             fast = fast->next;
             slow = slow->next;
         }
-        ListNode* toDelete = slow->next;
+        ListNode* temp = slow->next;
         slow->next = slow->next->next;
-        delete toDelete;
+        delete temp;
 
         return dummy.next;
     }
